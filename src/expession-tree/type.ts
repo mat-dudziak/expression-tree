@@ -10,7 +10,8 @@ export type ExpressionNodeOperators = {
 }
 
 export type Value = number;
-export type LeftExpression = Value | Node;
 
-export type RightExpression = LeftExpression;
+type LeftExpression = Value | Node;
+type RightExpression = LeftExpression;
+
 export type Node = [LeftExpression, Operator, RightExpression];

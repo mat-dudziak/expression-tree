@@ -27,7 +27,5 @@ export class ExpressionTree {
     return `(${leftExpression} ${this.operator} ${rightExpression})`;
   };
 
-  public nodeTest = (): ExpressionNode => new ExpressionNode(this.getLeftInput(), this.operator, this.getRightInput());
-
-  public result = (): number => this.nodeTest().result();
+  public result = (): number => new ExpressionNode(this.getLeftInput(), this.operator, this.getRightInput()).result();
 }
