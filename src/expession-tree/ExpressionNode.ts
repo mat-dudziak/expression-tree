@@ -6,7 +6,7 @@ export class ExpressionNode {
   }
 
   private static error = {
-    invalidOperator: (operator: Operator) => new Error(`Invalid operator '${operator}'`),
+    invalidOperator: (operator: Operator): Error => new Error(`Invalid operator '${operator}'`),
   }
 
   private operators: ExpressionNodeOperators = {
