@@ -5,6 +5,10 @@ export type Left = Value | ExpressionNode;
 export type Right = Left;
 export type Operator = '+' | '-' | 'x' | '÷';
 
+export type ExpressionNodeOperators = {
+  [key in Operator]: () => number;
+}
+
 export type Value = number;
 export type LeftExpression = Value | Node;
 

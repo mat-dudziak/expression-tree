@@ -1,5 +1,4 @@
-import { Left, Operator, Right, Expression } from './type';
-
+import { Left, Operator, Right, Expression, ExpressionNodeOperators } from './type';
 
 export class ExpressionNode {
   constructor(private left: Left, private operator: Operator, private right: Right) {
@@ -10,7 +9,7 @@ export class ExpressionNode {
     invalidOperator: (operator: Operator) => new Error(`Invalid operator '${operator}'`),
   }
 
-  private operators = {
+  private operators: ExpressionNodeOperators = {
     '+': () => this.getLeftResult() + this.getRightResult(),
     '-': () => this.getLeftResult() - this.getRightResult(),
     'x': () => this.getLeftResult() * this.getRightResult(),
