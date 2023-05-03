@@ -1,10 +1,19 @@
-import { Operator, ExpressionNode } from "../expession-tree";
+import { Operator, ExpressionNode, Expression } from '../expession-tree';
+
+type ExpressionNodeSet = {
+  left: number,
+  operator: Operator,
+  right: number,
+  expectedResult: number,
+  expectedExpression: Expression,
+}[];
 
 describe('ExpressionNode', () => {
-  const expressionNodeSet = [
+
+  const expressionNodeSet: ExpressionNodeSet = [
     {
       left: 1,
-      operator: '+' as Operator,
+      operator: '+',
       right: 2,
       expectedResult: 3,
       expectedExpression: '(1 + 2)',
@@ -12,7 +21,7 @@ describe('ExpressionNode', () => {
 
     {
       left: 6,
-      operator: '÷' as Operator,
+      operator: '÷',
       right: 3,
       expectedResult: 2,
       expectedExpression: '(6 ÷ 3)',
@@ -20,7 +29,7 @@ describe('ExpressionNode', () => {
 
     {
       left: 20,
-      operator: '-' as Operator,
+      operator: '-',
       right: 4,
       expectedResult: 16,
       expectedExpression: '(20 - 4)',
@@ -28,7 +37,7 @@ describe('ExpressionNode', () => {
 
     {
       left: 5,
-      operator: 'x' as Operator,
+      operator: 'x',
       right: 4,
       expectedResult: 20,
       expectedExpression: '(5 x 4)',

@@ -1,9 +1,15 @@
-import { ExpressionTree, Node } from "../expession-tree";
+import { ExpressionTree, Node, Expression } from '../expession-tree';
+
+type ExpressionTreeSet = {
+  input: Node,
+  expectedResult: number,
+  expectedExpression: Expression
+}[];
 
 describe('ExpressionTree', () => {
-  const expressionTreeSet = [
+  const expressionTreeSet: ExpressionTreeSet = [
     {
-      input: [[5, '-', 2], 'x', 5] as Node,
+      input : [[5, '-', 2], 'x', 5],
       expectedResult: 15,
       expectedExpression: '((5 - 2) x 5)',
     },
@@ -21,7 +27,7 @@ describe('ExpressionTree', () => {
         ],
         '÷',
         6
-      ] as Node,
+      ],
       expectedResult: 2,
       expectedExpression: '((7 + ((3 - 2) x 5)) ÷ 6)',
     },
@@ -43,7 +49,7 @@ describe('ExpressionTree', () => {
           '+',
           [2, '+', 1]
         ]
-      ] as Node,
+      ],
       expectedResult: 2,
       expectedExpression: '(((6 + 1) + ((3 - 2) x 5)) ÷ (3 + (2 + 1)))',
     },
@@ -65,7 +71,7 @@ describe('ExpressionTree', () => {
           '+',
           [2, '+', 1]
         ]
-      ] as Node,
+      ],
       expectedResult: 2,
       expectedExpression: '(((6 + 1) + ((3 - 2) x 5)) ÷ ((9 ÷ 3) + (2 + 1)))',
     },
