@@ -11,11 +11,9 @@
   - execute tests:
     - on you current setup
       `npm run test`
-    - via Docker
-      - `docker compose up`
+    - via Docker `docker compose up`
 
 
 ### About
-Suggested node version: 
 Logic is located at `./src/expression-tree`
 Tests are located at `./src/tests`
